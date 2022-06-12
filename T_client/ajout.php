@@ -287,7 +287,7 @@ $row=$sql->fetchAll();
               <div class="position-relative bg-gradient-primary h-100 m-3 px-2 border-radius-lg d-flex flex-column justify-content-center overflow-hidden" style="background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/signin-ill.jpg');
              background-size: cover;">
               <span class="mask bg-gradient-primary opacity-6"></span> 
-                <h4 class="mt-5 text-white font-weight-bolder position-relative">Liste des camions loués</h4>
+                <h4 class="mt-5 text-white font-weight-bolder position-relative">Liste des clients</h4>
                         <div class="mt-5 text-white font-weight-bolder position-relative">
 
                             <table class="table table-dark" style="text-align: center;">
