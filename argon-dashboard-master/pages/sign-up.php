@@ -41,33 +41,22 @@
       <div class="collapse navbar-collapse" id="navigation">
         <ul class="navbar-nav mx-auto">
           <li class="nav-item">
-            <a class="nav-link d-flex align-items-center me-2 active" aria-current="page" href="../pages/index">
+            <a class="nav-link d-flex align-items-center me-2 active" aria-current="page" href="index">
               <i class="fa fa-chart-pie opacity-6  me-1"></i>
               Dashboard
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link me-2" href="../pages/profile.php">
+            <a class="nav-link me-2" href="profile.php">
               <i class="fa fa-user opacity-6  me-1"></i>
               Profile
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link me-2" href="../pages/sign-up.php">
-              <i class="fas fa-user-circle opacity-6  me-1"></i>
-              Sign Up
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link me-2" href="../pages/sign-in.php">
+            <a class="nav-link me-2" href="sign-in.php">
               <i class="fas fa-key opacity-6  me-1"></i>
               Sign In
             </a>
-          </li>
-        </ul>
-        <ul class="navbar-nav d-lg-block d-none">
-          <li class="nav-item">
-            <a href="https://www.creative-tim.com/product/argon-dashboard" class="btn btn-sm mb-0 me-1 bg-gradient-light">Free Download</a>
           </li>
         </ul>
       </div>
@@ -155,9 +144,9 @@
                   </label>
                 </div>
                 <div class="text-center">
-                  <button type="button" class="btn bg-gradient-dark w-100 my-4 mb-2">Sign up</button>
+                  <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Sign up</button>
                 </div>
-                <p class="text-sm mt-3 mb-0">Already have an account? <a href="javascript:;" class="text-dark font-weight-bolder">Sign in</a></p>
+                <p class="text-sm mt-3 mb-0">Already have an account? <a href="sign-in.php" class="text-dark font-weight-bolder">Sign in</a></p>
               </form>
             </div>
           </div>
