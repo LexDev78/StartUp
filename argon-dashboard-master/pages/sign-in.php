@@ -1,5 +1,6 @@
 <?php
   require "../../connecter.php";
+  session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,7 +51,7 @@
                 <div class="card-body">
                   <form role="form">
                     <div class="mb-3">
-                      <input type="email" class="form-control form-control-lg" placeholder="Email" aria-label="Email">
+                      <input type="email" class="form-control form-control-lg" placeholder="Email" aria-label="Email" value="<?= @$_SESSION['inscrit']['identifiant'] ?>">
                     </div>
                     <div class="mb-3">
                       <input type="email" class="form-control form-control-lg" placeholder="Password" aria-label="Password">

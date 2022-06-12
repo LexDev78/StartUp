@@ -1,5 +1,17 @@
 <?php
   require "../../connecter.php";
+  extract($_POST);
+  session_start();
+  if(isset($valider)){
+  $_SESSION["inscrit"]=[
+      "nom"=>$nom,
+      "prenom"=>$prenom,
+      "password"=>$password,
+      "identifiant"=>$identifiant,
+      "poste"=>$poste
+  ];
+  header('location:actions/ajoutUser.php');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,14 +33,14 @@
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
   <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- CSS Files -->
-  <link id="pagestyle" href="../assets/css/argon-dashboard.css?v=2.0.2" rel="stylesheet" />
+  <link id="pagestyle" href="../assets/css/argon-dashboard.css" rel="stylesheet" />
 </head>
 
 <body class="">
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg position-absolute top-0 z-index-3 w-100 shadow-none my-3 navbar-transparent mt-4">
     <div class="container">
-      <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3 text-white" href="../pages/index">
+      <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3 text-white" href="index.php">
         Argon Dashboard 2
       </a>
       <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
@@ -127,15 +139,26 @@
               </div>
             </div>
             <div class="card-body">
-              <form role="form">
+              <form role="form" method="post">
                 <div class="mb-3">
-                  <input type="text" class="form-control" placeholder="Name" aria-label="Name">
+                  <input type="text" class="form-control" placeholder="Name" aria-label="Name" name="nom">
                 </div>
                 <div class="mb-3">
-                  <input type="email" class="form-control" placeholder="Email" aria-label="Email">
+                  <input type="prenom" class="form-control" placeholder="Prénom" aria-label="prenom" name="prenom">
                 </div>
                 <div class="mb-3">
-                  <input type="password" class="form-control" placeholder="Password" aria-label="Password">
+                  <input type="password" class="form-control" placeholder="Password" aria-label="Password" name="password">
+                </div>
+                <div class="mb-3">
+                  <input type="text" class="form-control" placeholder="Identifiant" aria-label="Identifiant" name="identifiant">
+                </div>
+                <div class="mb-3">
+                  <select name="poste" id="poste" class="form-control">
+                    <option value="">Poste</option>
+                    <option value="superviseur">Superviseur</option>
+                    <option value="assistant">Assistant</option>
+                    <option value="directeur">Directeur</option>
+                  </select>
                 </div>
                 <div class="form-check form-check-info text-start">
                   <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
@@ -144,7 +167,7 @@
                   </label>
                 </div>
                 <div class="text-center">
-                  <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Sign up</button>
+                  <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2" name="valider">Sign up</button>
                 </div>
                 <p class="text-sm mt-3 mb-0">Already have an account? <a href="sign-in.php" class="text-dark font-weight-bolder">Sign in</a></p>
               </form>
