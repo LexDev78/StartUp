@@ -6,6 +6,14 @@ session_start();
     $identifiant = $_SESSION['inscrit']['identifiant'];
     $password = $_SESSION['inscrit']['password'];
     $poste = $_SESSION['inscrit']['poste'];
-    $req=$bdd->query('INSERT INTO utilisateurs VALUES(null,"'.$nom.'","'.$prenom.'","'.$identifiant.'","'.$password.'","'.$poste.'")');
-    header('location: ../sign-in.php');
+        $veri=$bdd->query('SELECT * FROM utilisateurs where identifiantUser = "'.$identifiant.'" ');
+        $veri=$veri->fetch();
+     
+        if(is_array($veri)){
+            die("<h1>Votre identifiant existe déjà <a href='../sign-up.php'>réesayez avec un autre identifiant</a></h1>");
+        } else {
+            $req=$bdd->query('INSERT INTO utilisateurs VALUES(null,"'.$nom.'","'.$prenom.'","'.$identifiant.'","'.$password.'","'.$poste.'")');
+        header('location: ../sign-in.php');
+        }
+   
 ?>

@@ -1,16 +1,21 @@
 <?php
   require "../../connecter.php";
-  extract($_POST);
+  htmlspecialchars(extract($_POST));
   session_start();
   if(isset($valider)){
-  $_SESSION["inscrit"]=[
-      "nom"=>$nom,
-      "prenom"=>$prenom,
-      "password"=>$password,
-      "identifiant"=>$identifiant,
-      "poste"=>$poste
-  ];
-  header('location:actions/ajoutUser.php');
+    if(!empty($nom) && !empty($prenom) && !empty($password) && !empty($identifiant) && !empty($password)){
+      $_SESSION["inscrit"]=[
+        "nom"=>$nom,
+        "prenom"=>$prenom,
+        "password"=>$password,
+        "identifiant"=>$identifiant,
+        "poste"=>$poste
+    ];
+    header('location:actions/ajoutUser.php');
+    }else{
+      $erreur = "Veuillez remplir tous les champs";
+  }
+ 
 }
 ?>
 <!DOCTYPE html>
@@ -169,6 +174,7 @@
                 <div class="text-center">
                   <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2" name="valider">Sign up</button>
                 </div>
+                <p style="background-color: red; color:white;text-align:center; border-radius:8px"><?= @$erreur ?></p>
                 <p class="text-sm mt-3 mb-0">Already have an account? <a href="sign-in.php" class="text-dark font-weight-bolder">Sign in</a></p>
               </form>
             </div>
